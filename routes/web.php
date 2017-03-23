@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/city/{name}', 'CityController@index');
+Route::post('/city/create/{name}', 'CityController@create');
+
+Route::get('/contact/{user_id}', 'ContactController@get');
+Route::get('/contact/create', 'ContactController@create');
+
+Route::get('/user/{id}', 'UserController@index');
+Route::post('/user/register', 'UserController@create');
+Route::get('/user/update', 'UserController@update');
