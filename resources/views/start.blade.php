@@ -20,6 +20,15 @@
                 window.Laravel = {!! json_encode([
                     'csrfToken' => csrf_token(),
                 ]) !!};
+                window.registerClient = function(){
+                    page.submit({
+                        form:$('#start'),
+                        callback:function(){
+                            console.debug();
+                            document.location='/home';
+                        }
+                    });
+                }
             </script>
 
     </head>
@@ -42,16 +51,15 @@
 
                 </div>
                 <div id="start" class="form" data-rel="/user/register" data-method="post">
-                    {{ csrf_field() }}
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"name","required"=>'required',"placeholder"=>"Ваше имя","addon"=>"<i class='fa fa-user-o'></i>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"city","required"=>'required',"placeholder"=>"Ваш город","addon"=>"<i class='fa fa-map-marker'></i>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"email","required"=>'required',"placeholder"=>"E-mail","addon"=>"<i class='fa fa-envelope'></i>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"phone","placeholder"=>"Ваш телефон","addon"=>"<i class='fa fa-phone'></i>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"skype","placeholder"=>"Skype","addon"=>"<i class='fa fa-skype'></i>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"whatsapp","placeholder"=>"WhatsApp","addon"=>"<i class='fa fa-whatsapp'></i>"])</div></div>
-                    <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"viber","placeholder"=>"Viber","addon"=>"<img alt='v' src='/css/viber.svg' style='width:1em;color:#555;fill-color:#555;'></i>"])</div></div>
+                    <div class="row"><div class="col-md-6 col-md-offset-3">@include('inputs.text',["name"=>"viber","placeholder"=>"Viber","addon"=>"<img alt='v' src='/css/viber.svg' style='width:1em;color:#555;fill-color:#555;'/>"])</div></div>
                     <div class="row"><div class="col-md-6 col-md-offset-3"><div class="g-recaptcha" data-sitekey="6LfX5RkUAAAAABiNI70gBkNum67HHtlxefP_WX19"></div></div></div>
-                    <div class="row"><div class="col-md-6 col-md-offset-3"><button type="button" onclick="page.submit({form:$('#start'),callback:function(){document.location='/home';}})" class="btn btn-primary pull-right">Продолжить</button></div></div>
+                    <div class="row"><div class="col-md-6 col-md-offset-3"><button type="button" onclick="registerClient()" class="btn btn-primary pull-right">Продолжить</button></div></div>
                     <input type="hidden" name="city_id" />
                     <input type="hidden" name="type" value="0" />
                     <input type="hidden" name="status_id" value="4" />

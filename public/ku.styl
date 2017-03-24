@@ -49,3 +49,79 @@ html, body
         border solid .2em red;
 .input-group-addon
     min-width:3em;
+.clients
+    padding .4em;
+.clients:nth-child(odd)
+    background-color: rgba(0,0,255,.05)
+a.contact
+    margin-left: 2em
+    .fa
+        display: inline-block;
+a.contact:hover
+    text-decoration: none;
+.editable
+    display: inline-block;
+    position: relative;
+    width:100%;
+    min-height:1em;
+    border-radius: .4em;
+    padding-left: 1.4em;
+    border:solid .2em rgba(0,0,0,.1);
+.editable:before
+    position: absolute;
+    left:.2em;
+    font-family: 'Fontawesome';
+.editable.email:before
+    content: '\f0e0'
+.editable.phone:before
+    content: '\f095'
+.editable.whatsapp:before
+    content: '\f232'
+.editable.skype:before
+    content: '\f17e'
+.editable.telegram:before
+    content: '\f2c6'
+
+.overlay
+    text-align: center;
+    padding: auto 0;
+    opacity: 0;
+    position: absolute;
+    left 0;
+    top 0;
+    background-color: rgba(0,0,0,1)
+    transition: all .4s ease-in;
+    width:100%;
+    height:100%;
+    a
+        color:rgba(255,255,255,.7);
+        text-decoration: none;
+        transition: all .4s ease-in;
+        cursor: pointer
+    a:hover
+        color:rgba(255,255,255,1);
+    a.upload
+        position: absolute;
+        right:1em;
+        top: 1em;
+.kurator .photo
+    position: relative;
+    text-align: center;
+    img
+        width:100%;
+        max-width:30rem;
+        min-height: 10rem;
+.kurator .photo:hover .overlay
+    opacity: .4;
+.timing
+    padding:0 1em;
+    display: inline-block;
+    height:2em;
+    line-height: 2em;
+    background-color: grey;
+    color:rgba(255,255,255,.7);
+    font-weight: 100;
+.status-working
+    background-color: #2ab27b;
+    color:rgba(255,255,255,1);
+    font-weight: 600;

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use Log;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -21,8 +22,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index(){
+        $data = app('App\Http\Controllers\UserController')->userInfo(Auth::user()->id);
+        return view('home',$data);
+    }
+    public function statuses(){
+        $data = app('App\Http\Controllers\UserController')->userInfo(Auth::user()->id);
+        return response()->json($res,is_null($res)?500:200,['Content-Type' => 'application/json; charset=utf-8'],JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     }
 }

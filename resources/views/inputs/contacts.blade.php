@@ -1,0 +1,5 @@
+@include('inputs.smalltext',["id"=>$id,"name"=>"email","value"=>isset($contacts["email"])?$contacts["email"]["value"]:"","placeholder"=>"E-mail","addon"=>"<i class='fa fa-envelope'></i>"])
+@include('inputs.smalltext',["id"=>$id,"name"=>"phone","value"=>isset($contacts["phone"])?$contacts["phone"]["value"]:"","placeholder"=>"Ваш телефон","addon"=>"<i class='fa fa-phone'></i>"])
+@include('inputs.smalltext',["id"=>$id,"name"=>"skype","value"=>isset($contacts["skype"])?$contacts["skype"]["value"]:"","placeholder"=>"Skype","addon"=>"<i class='fa fa-skype'></i>"])
+@include('inputs.smalltext',["id"=>$id,"name"=>"whatsapp","value"=>isset($contacts["whatsapp"])?$contacts["whatsapp"]["value"]:"","placeholder"=>"WhatsApp","addon"=>"<i class='fa fa-whatsapp'></i>"])
+@include('inputs.smalltext',["id"=>$id,"name"=>"viber","value"=>isset($contacts["viber"])?$contacts["viber"]["value"]:"","placeholder"=>"Viber","addon"=>"<img alt='v' src='/css/viber.svg' style='width:1em;color:#555;fill-color:#555;'/>"])
